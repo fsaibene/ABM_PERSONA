@@ -1,0 +1,61 @@
+
+ 
+              <ul class="nav nav-tabs">
+		         <li  class="btn btn-info animated bounceInLeft" >
+		         	<a href="index.html">
+		         		 <span class="glyphicon glyphicon-list-alt">&nbsp;</span>
+		         		 Inicio
+		         	</a>
+		         </li>
+		         <li class="btn btn-info animated bounceInLeft" >
+		         	<button ng-Click="IraAlta()"> 
+		         		<span class="glyphicon glyphicon-plus-sign">&nbsp;</span>
+		         		Alta
+		         	</a>
+		         </li>
+		         <li  class="btn btn-info animated bounceInLeft" >
+              <button ng-Click="IraGrilla()"> 
+		         		<span class="glyphicon glyphicon-th" >&nbsp;</span>
+		         			Grilla</a>
+		         		</li>
+		        	<span id="tituloBarra"  class="animated bounceInRight">{{DatoTest}}ABM - PHP - Angular Versión 1.0.1 &nbsp;&nbsp;&nbsp;</span>
+      </ul>
+		
+
+	<div class="container">
+		<div class="page-header">
+			<center> <h1>Datos</h1>   </center>     
+		</div>
+		<div class="CajaInicio animated bounceInRight">
+			<h1> </h1>
+
+			<form id="FormIngreso" name="FormIngreso" enctype="multipart/form-data" >
+				<input type="checkbox" ng-model="ver"/>
+				<span class="span">{{ver}}</span>
+				<input type="text" name="apellido" ng-if="ver" ng-model="Mascota.date" placeholder="ingrese apellido" value="" required/>
+				<span id="lblApellido" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*
+				</span>
+				<input type="text" name="nombre" ng-show="ver" ng-model="Mascota.nombre" placeholder="ingrese nombre" value="" required/> <span id="lblNombre" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+				<input type="text" name="dni" ng-model="Mascota.raza" ng-disabled="ver" placeholder="ingrese dni" value="" required/> 
+				<span id="lblDni" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+				<p style='color: black;'>*El DNI no se puede modificar.</p>
+				<input type="password" ng-model="persona.passwordoriginal" name="passwordoriginal" placeholder="Password Orignal"  value="" required/>
+				<input type="password" name="passwordcopia" ng-model="persona.passwordcopia"  placeholder="Password Copia" value="" required/>
+				
+				<input type="hidden" name="idOculto" id="id" value="" />
+				<!--
+				<input type="file" name="foto" />
+
+
+				<img  src="fotos/pordefecto.png" class="fotoform" id="foto"/>
+				<p style="  color: black;">*La foto se actualiza al guardar.</p>
+				-->
+				<a class="btn btn-info " name="guardar" ng-disabled="persona.passwordcopia != persona.passwordoriginal || FormIngreso$invalid"  ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardar</a> 
+					
+				<input type="hidden" value="" id="idParaModificar" name="agregar" />
+				<input type="hidden" value="" id="hdnAgregar" name="agregar" />
+				</div>
+
+			</form>
+	</div>
+	</div>
